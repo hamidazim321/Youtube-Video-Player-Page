@@ -19,31 +19,40 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <div class="col-4 col-lg-2 col-md-2">
-                <a data-bs-toggle="collapse" href="#SideBar" role="button" aria-expanded="false" aria-controls="SideBar">
+                <a data-bs-toggle="collapse" href="#SideBar" role="button" aria-expanded="false" aria-controls="SideBar" aria-label="Toggle navigation">
                     <i class="fa fa-bars" style="color: black;"></i>
                 </a>
                 <a class="navbar-brand" href="#"><i class="fa fa-youtube-play fa-lg" style="color: red;"></i><span class="fs-4 ps-1 fw-bold">Youtube</span></a>
             </div>
             <div class="col-8 col-lg-10 col-md-10">
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                <form class="d-flex" style="width:50%;">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn border" type="submit"><i class="fa fa-search"></i></button>
+                    <span class="align-self-end">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#"><i class="fa fa-camera-retro"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#"><i class="fa fa-bell-o"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#"><i class="fa fa-google"></i></a>
+                            </li>
+                        </ul>
+                    </span>
                 </form>
-
             </div>
         </div>
     </nav>
 
     <!--Side Bar-->
-    <div class="container-fluid">
+    <div class="container-fluid mt-2">
         <div class="row">
             <div>
             </div>
-            <div class="col-4" id="SideBar">
+            <div class="col-2" id="SideBar">
                 <div class="flex-shrink-0 p-3 bg-white" style="width: fit-content;">
-                    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-                      <span class="fs-5 fw-semibold">Side Bar</span>
-                    </a>
                     <ul class="list-unstyled ps-0">
                       <li class="mb-1">
                         <button class="btn align-items-center rounded">
@@ -80,12 +89,17 @@
             <div class="col-8">
                 <iframe width="100%" style="min-height: 450px;" src="https://www.youtube.com/embed/tgbNymZ7vqY" class="embed-responsive embed-responsive-16by9">
                 </iframe>
+                <p>Bohemian Rhapsody | Muppet Music Video | The Muppets</p>
             </div>
-            <div class="col-4 bg-danger">
+            <div class="col">
+                <img  class="img-fluid" style="max-width: 100%;" src="images\Shrek.jpg" alt="">
+                <p>(2001) kill the Ogre Scene</p>
+                
 
             </div>
         </div>
     </div>
+   
 
     
 
