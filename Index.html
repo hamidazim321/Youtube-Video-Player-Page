@@ -1,149 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Youtube Player</title>
-    <!--Importing Bootstrap CSS Library-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!--Importing Font Awesome Library for Icons-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <link rel="stylesheet" href="Sidebar.css">
-
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Youtube Player</title>
+        <!--Importing Bootstrap CSS Library-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!--Importing Font Awesome Library for Icons-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
-</head>
+        <link rel="stylesheet" href="style.css">
+    </head>
 <body>
-    <!--The Top Navigation bar-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <div class="col-4 col-lg-2 col-md-2">
-                <a data-bs-toggle="collapse" href="#SideBar" role="button" aria-expanded="false" aria-controls="SideBar" aria-label="Toggle navigation">
-                    <i class="fa fa-bars" style="color: black;"></i>
-                </a>
-                <a class="navbar-brand" href="#"><i class="fa fa-youtube-play fa-lg" style="color: red;"></i><span class="fs-4 ps-1 fw-bold">Youtube</span></a>
-            </div>
-            <div class="col-8 col-lg-10 col-md-10">
-                <form class="d-flex">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn border" type="submit"><i class="fa fa-search"></i></button>
-                    <span>
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
-                            <li class="nav-item align-self-center ms-5 ">
-                                <a class="nav-link active" aria-current="page" href="#"><i class="fa fa-camera-retro"></i></a>
-                            </li>
-                            <li class="nav-item align-self-center ms-5">
-                                <a class="nav-link active" aria-current="page" href="#"><i class="fa fa-bell-o"></i></a>
-                            </li>
-                            <li class="nav-item my-auto ms-5">
-                              <a class="nav-link active" aria-current="page" href="#"><button class="btn btn-outline-primary"><i class="fa fa-user" style="color: blue;"></i></button></i></a>
-                          </li>
-                        </ul>
-                    </span>
+
+    <!--The NavBar-->
+    <nav class="sticky-top bg-white pb-1">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-3 pt-2 fs-4">
+                  <button class="SideBarButton btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="fa fa-bars fa-lg"></i></button>
+                  <i class=" Yotube-Logo fa fa-youtube-play fa-lg"></i><span class="Youtube align-basline fw-bold ms-1">Youtube</span>
+                  <div class="custom-offcanvas offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                  <div class="offcanvas-header">
+                    <button type="button" class="btn" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa fa-bars fa-lg"></i></button>
+                    <i class="offcanvas-title Yotube-Logo fa fa-youtube-play fa-lg" id="offcanvasWithBothOptionsLabel"><span class="Youtube align-basline fw-bold ps-1 me-5" style="color: black;">Youtube</span></i>
+                    
+                  </div>
+                  <div class="offcanvas-body">
+                          <div class="flex-shrink-0 p-3 bg-white" style="width: fit-content;">
+                              <ul class="list-unstyled ps-0">
+                                <li class="mb-1">
+                                  <button class="btn align-items-center rounded">
+                                    <i class="fa fa-home" style="font-size: larger; display: inline-block; margin-right: 6px;"></i>Home
+                                  </button>
+                                </li>
+                                <li class="mb-1">
+                                  <button class="btn align-items-center rounded">
+                                    <i class="fa fa-youtube-play" style="font-size: larger; display: inline-block; margin-right: 6px;"></i>Shorts
+                                  </button>
+                                </li>
+                                <li class="mb-1">
+                                  <button class="btn align-items-center rounded">
+                                    <i class="fa fa-youtube-play" style="font-size: larger; display: inline-block; margin-right: 6px;"></i>Subscriptions
+                                  </button>
+                                </li>
+                                <li class="mb-1">
+                                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                                    Show More
+                                  </button>
+                                  <div class="collapse" id="account-collapse">
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                      <li><a href="#" class="link-dark rounded">Trending</a></li>
+                                      <li><a href="#" class="link-dark rounded">Watch Later</a></li>
+                                      <li><a href="#" class="link-dark rounded">Settings</a></li>
+                                      <li><a href="#" class="link-dark rounded">Sign out</a></li>
+                                    </ul>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                      </div>        
+                  </div>
+              </div> 
+              <div class="col-6 pt-2">
+                <form class="Search d-flex text-center" role="search">
+                  <input type="search" class="SearchBox form-control" aria-label="Search" placeholder="Search">
+                  <button class="SearchButton px-md-3 px-lg-3 bg-light me-3"><i class="fa fa-search" style="color: rgb(100, 93, 93);"></i></button>
+                  <span class="pt-2"><i class="fa fa-microphone fa-lg"></i></span>
                 </form>
+              
+              </div>
+              <div class="col-3 pt-2 text-end">
+                <a href="#"><i class="Top-Options fa fa-camera pt-2 px-3" style="color: black;"></i></a>
+                <a href="#"><i class="Top-Options fa fa-bell-o pt-2 px-3" style="color: black;"></i></a>
+                <button style="border-top-right-radius: 18px; border-bottom-right-radius: 18px; border-top-left-radius: 18px; border-bottom-left-radius: 18px; border: solid 0.2px rgb(151, 140, 140); color: rgb(41, 72, 253);"><i class="fa fa-user me-1"></i>Sign in</button>
+
+
+                      
+              </div>
+          </div>
+      </div>
+    </nav>      
+
+    <!--The Lower Body-->
+
+    <div class="container-fluid  ">
+        <div class="row">
+            <!--The left side of the body-->
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 pt-4">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                          <iframe width="100%" style="min-height: 450px;" src="https://www.youtube.com/embed/tgbNymZ7vqY" class="embed-responsive embed-responsive-16by9">
+                          </iframe>
+                          <p style="font-size: large; font-weight: bold; margin-bottom: 0;">Bohemian Rhapsody | Muppet Music Video | The Muppets</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row" id="Channel">
+                        <div class="col pt-1">
+                          <img src="images/red-puppet.jpg" class="img-fluid rounded-circle me-2" id="round-img">
+                          <div style="display: inline-block;">
+                            <span class="fw-bold">Rock Puppet</span><br>
+                            1M Subscribers
+                          </div>
+                          <button class="align-top mt-2 ms-2 fw-bold py-2 px-3 " style="border-top-right-radius: 18px; border-bottom-right-radius: 18px; border-top-left-radius: 18px; border-bottom-left-radius: 18px; border: solid 0.2px black; background-color: rgb(27, 23, 23); color: white; font-size: small;">Subscribe</button>
+    
+                        </div>
+              
+                        <div class="col pt-3" style="margin-left: -5%;">
+                          <div class="btn-group">
+                            <button class="fw-bold px-3 py-1" style="border-top-left-radius: 18px; border-bottom-left-radius: 18px; border: solid 0.2px rgb(151, 140, 140);"><i class="fa fa-thumbs-up"><span class="ms-1">5k</span></i></button>
+                            <button class="fw-bold px-3 py-1" style="border-top-right-radius: 18px; border-bottom-right-radius: 18px; border: solid 0.2px rgb(151, 140, 140);"><i class="fa fa-thumbs-down"></i></button>
+
+                          </div>
+                          
+                          <button class="DownloadShareButtons fw-bold px-3 py-1" ><i class="fa fa-arrow-right me-1"></i><span style="font-size: small;">Share</span></button>
+                          <button class="DownloadShareButtons fw-bold px-3 py-1"><i class="fa fa-download me-1"></i><span style="font-size: small;">Download</span></button>
+                          <button class="DownloadShareButtons fw-bold px-3 py-1"><i class="fa fa-ellipsis-h"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                          <div class="accordion" id="Description">
+                            <div class="accordion-item" style="border: none; background-color: rgb(218, 216, 216);">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button" style=" background-color: transparent;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  <p style="color: black;"><b class="me-2">167,648,714 views</b><b class="me-3">Nov 2009</b><a href="#" style="text-decoration: none; color: black;">Show more</a></p>
+                                </button>
+                              </h2>
+                              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#Description">
+                                <div class="accordion-body">
+                                  <p>                                    
+                                    Muppets Characters
+                                    Gonzo is a multi-talented artist who performs outrageous daredevil stunts. 
+                                    Though an odd looking creature, Gonzo takes pride in his uniqueness and enjoys 
+                                    every adventure he goes on with the Muppets including the occasional space voyage. 
+
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col my-2 mx-2">
+                          <i class="rounded-circle border border-primary p-2 align-top me-2 fa fa-user fa-lg"></i>
+                          <input id= "CommentBox"type="text" placeholder="Add a comment">
+                          <button class="px-3 py-1 me-1" style="border-top-right-radius: 18px; border-bottom-right-radius: 18px; border-top-left-radius: 18px; border-bottom-left-radius: 18px; border: solid 0.2px rgb(151, 140, 140); float: right;"><span style="font-size: small;">Comment</span></button>
+                          <button class="px-3 py-1 me-1" style="border-top-right-radius: 18px; border-bottom-right-radius: 18px; border-top-left-radius: 18px; border-bottom-left-radius: 18px; border: solid 0.2px rgb(151, 140, 140); float: right;"><span style="font-size: small;">Cancel</span></button>
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                      <div class="col mx-2 my-1">
+                        <i class="rounded-circle border border-primary p-2 align-top me-2 fa fa-user fa-lg"></i>
+                        <span class="UserId me-1 align-top">sisi429</span><span class="ComDate align-top">3 years ago</span>
+                        <p class="Comment">What this family is willing to do for each other!! Luke mimicking the machine is just priceless.</p>
+                        <a href="#" class="Reaction me-1"><i class="fa fa-thumbs-up"></i></a><span class="likes me-3">4.5k</span> <a href="#" class="Reaction"><i class="fa fa-thumbs-down"></i></a>
+                      </div>
+                    </div>
+                    <div class="row my-3">
+                      <div class="col mx-2 my-1">
+                        <i class="rounded-circle border border-primary p-2 align-top me-2 fa fa-user fa-lg"></i>
+                        <span class="UserId me-1 align-top">sisi429</span><span class="ComDate align-top">3 years ago</span>
+                        <p class="Comment">What this family is willing to do for each other!! Luke mimicking the machine is just priceless.</p>
+                        <a href="#" class="Reaction me-1"><i class="fa fa-thumbs-up"></i></a><span class="likes me-3">4.5k</span> <a href="#" class="Reaction"><i class="fa fa-thumbs-down"></i></a>
+                      </div>
+                    </div>
+                    <div class="row my-3">
+                      <div class="col mx-2 my-1">
+                        <i class="rounded-circle border border-primary p-2 align-top me-2 fa fa-user fa-lg"></i>
+                        <span class="UserId me-1 align-top">sisi429</span><span class="ComDate align-top">3 years ago</span>
+                        <p class="Comment">What this family is willing to do for each other!! Luke mimicking the machine is just priceless.</p>
+                        <a href="#" class="Reaction me-1"><i class="fa fa-thumbs-up"></i></a><span class="likes me-3">4.5k</span> <a href="#" class="Reaction"><i class="fa fa-thumbs-down"></i></a>
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--The Right side of the body-->
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 mt-4">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                         <a href="#"><img src="images/Dumb&Dumber.jpg" class="Suggest-Vids img-thumnail border rounded border-dark p-1 me-2" onclick="Upload()"></a> 
+                         <p class="align-top fw-bold">Dumb&Dumber</p>
+                         <p class="Vid-Title">Movie clips</p>
+                         <p class="Vid-Title">1.9M views</p><ul class="Vid-Date"><li>9 years ago</li></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                  <div class="row">
+                      <div class="col">
+                       <a href="#"><img src="images/Matrix.jpg" class="Suggest-Vids img-thumnail border rounded border-dark p-1 me-2" onclick="Upload()"></a> 
+                       <p class="align-top fw-bold">Matrix</p>
+                       <p class="Vid-Title">Movie clips</p>
+                       <p class="Vid-Title">1.9M views</p><ul class="Vid-Date"><li>9 years ago</li></ul>
+                      </div>
+                  </div>
+              </div>
+              <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                     <a href="#"><img src="images/Perfume.jpg" class="Suggest-Vids img-thumnail border rounded border-dark p-1 me-2" onclick="Upload()"></a> 
+                     <p class="align-top fw-bold">Perfume</p>
+                     <p class="Vid-Title">Movie clips</p>
+                     <p class="Vid-Title">1.9M views</p><ul class="Vid-Date"><li>9 years ago</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+              <div class="row">
+                  <div class="col">
+                   <a href="#"><img src="images/Shrek.jpg" class="Suggest-Vids img-thumnail border rounded border-dark p-1 me-2" onclick="Upload()"></a> 
+                   <p class="align-top fw-bold">Shrek</p>
+                   <p class="Vid-Title">Movie clips</p>
+                   <p class="Vid-Title">1.9M views</p><ul class="Vid-Date"><li>9 years ago</li></ul>
+                  </div>
+              </div>
+          </div>
+          <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                 <a href="#"><img src="images/Wanted.jpg" class="Suggest-Vids img-thumnail border rounded border-dark p-1 me-2" onclick="Upload(this.parentNode)"></a> 
+                 <p class="align-top fw-bold">Wanted</p>
+                 <p class="Vid-Title">Movie clips</p>
+                 <p class="Vid-Title">1.9M views</p><ul class="Vid-Date"><li>9 years ago</li></ul>
+                 <span id="source" hidden="true">https://youtu.be/b5l14b6FzkU</span>
+                </div>
             </div>
         </div>
-    </nav>
 
-    <!--Side Bar-->
-    <div class="container-fluid mt-2">
-        <div class="row">
-            <div>
             </div>
-            <div class="col-2" id="SideBar">
-                <div class="flex-shrink-0 p-3 bg-white" style="width: fit-content;">
-                    <ul class="list-unstyled ps-0">
-                      <li class="mb-1">
-                        <button class="btn align-items-center rounded">
-                          <i class="fa fa-home" style="font-size: larger; display: inline-block; margin-right: 6px;"></i>Home
-                        </button>
-                      </li>
-                      <li class="mb-1">
-                        <button class="btn align-items-center rounded">
-                          <i class="fa fa-youtube-play" style="font-size: larger; display: inline-block; margin-right: 6px;"></i>Shorts
-                        </button>
-                      </li>
-                      <li class="mb-1">
-                        <button class="btn align-items-center rounded">
-                          <i class="fa fa-youtube-play" style="font-size: larger; display: inline-block; margin-right: 6px;"></i>Subscriptions
-                        </button>
-                      </li>
-                      <li class="mb-1">
-                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-                          Show More
-                        </button>
-                        <div class="collapse" id="account-collapse">
-                          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Trending</a></li>
-                            <li><a href="#" class="link-dark rounded">Watch Later</a></li>
-                            <li><a href="#" class="link-dark rounded">Settings</a></li>
-                            <li><a href="#" class="link-dark rounded">Sign out</a></li>
-                          </ul>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                
-            </div>
-            <div class="col-8">
-                <iframe width="100%" style="min-height: 450px;" src="https://www.youtube.com/embed/tgbNymZ7vqY" class="embed-responsive embed-responsive-16by9">
-                </iframe>
-                <p style="font-size: large; font-weight: bold;">Bohemian Rhapsody | Muppet Music Video | The Muppets</p>
-                <p>18 comments</p>
-                <div class="mt-3 row">
-                  <div class="col-1">
-                    <i class="fa fa-user fa-2x"></i>
-                  </div>
-                  <div class="col-7">
-                    <p><span style="font-weight: bold;">User1</span><br> Bla bla bla bla</p>
-                  </div>
-                    
-                  
-                  </div>
-                  <div class="mt-3 row">
-                    <div class="col-1">
-                      <i class="fa fa-user fa-2x"></i>
-                    </div>
-                    <div class="col-7">
-                      <p><span style="font-weight: bold;">User1</span><br> Bla bla bla bla</p>
-                    </div>
-                      
-                    
-                    </div>
+            
 
-                </div>
-  
-            </div>
-            <div class="col">
-                <img  class="img-fluid rounded" style="max-width: 100%;" src="images\Shrek.jpg" alt="">
-                <p>(2001) kill the Ogre Scene</p>
-                <img  class="img-fluid rounded" style="max-width: 100%;" src="images\Dumb&Dumber.jpg" alt="">
-                <p>The Greatest Unscripted Movie Scenes</p>
-                <img  class="img-fluid rounded" style="max-width: 100%;" src="images\Wanted.jpg" alt="">
-                <p>(2001) kill the Ogre Scene</p>
-                <img  class="img-fluid rounded" style="max-width: 100%;" src="images\Matrix.jpg" alt="">
-                <p>Wanted (5/11) Movie Clip</p>
-            </div>
+               
         </div>
     </div>
-   
-
-    
 
 
 
-
-
-
-
-
-
-
-
-
+    <script src="script.js"></script>
     <!--Importing Bootstrap JS Libraries-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
 </body>
 </html>
